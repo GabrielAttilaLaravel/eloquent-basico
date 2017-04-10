@@ -10,7 +10,28 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use EloquentORM\User;
+Route::get('/create', function () {
+    $user = User::create([
+        'name' => 'GabrielAlexander',
+        'email' => 'GabrielAlexander@a.com',
+        'password' => bcrypt('123123'),
+        'gender' => 'm',
+        'biography' => 'Programador web'
+    ]);
 
-Route::get('/', function () {
-    return view('welcome');
+    return 'Usuario guardado...';
+});
+
+Route::get('/update-user', function () {
+
+
+    $user = User::find(7);
+
+    $user->gender = 'm';
+    $user->biography = 'Programador web';
+
+    $user->save();
+
+    return 'Usuario actualizado...';
 });
