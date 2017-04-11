@@ -27,4 +27,12 @@ class QueryController extends Controller
         $title = 'Lista de usuarios (GET Custom - con Array)';
         return view('query.metodo', compact('users', 'title'));
     }
+
+    public function eloquentDelete($id)
+    {
+        // pasamos al get como parametro las columans que queremos visualizar
+        $user = User::find($id);
+        $user->delete();
+        return view('pages.delete');
+    }
 }

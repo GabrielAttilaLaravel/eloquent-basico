@@ -13,17 +13,9 @@
         </h1>
 
         <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Genero</th>
-                <th>Biography</th>
-            </tr>
-            </thead>
+            @include('partials.head-users')
             <tbody>
-            @include('partials.list-users')
+                @include('partials.list-users')
             </tbody>
         </table>
     </div>
