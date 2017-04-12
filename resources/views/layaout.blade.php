@@ -10,6 +10,9 @@
             body{
                 margin-top: 50px;
             }
+            td{
+                vertical-align: middle!important;
+            }
         </style>
     </head>
     <body>
